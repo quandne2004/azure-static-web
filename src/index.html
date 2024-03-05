@@ -11,7 +11,14 @@
 <body>
   <main>
     <h1>Quan nguyen JavaScript App</h1>
+    <p>Loadding content API:<b id="name">......</b></p>
   </main>
+  <script>
+    (async function(){
+      const {text} = await(await fetch (`/api/message`)).json();
+      document.querySelector('#name').textContent = text;
+    }());
+  </script>
 </body>
 
 </html>
